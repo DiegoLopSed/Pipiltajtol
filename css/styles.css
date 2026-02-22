@@ -1,0 +1,373 @@
+/* ============================================
+   Pipiltajtol — Estilos del sitio
+   Usa el design system (pipitajtol.css)
+   ============================================ */
+
+/* Restaurar grid de Bootstrap tras reset del design system */
+.row {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+.row > * {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* --- Base --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Contenido de páginas internas (evitar solapamiento con navbar fija) */
+.page-content {
+  padding-top: 80px;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background-color: var(--pipil-fondo);
+  color: var(--pipil-gris-texto);
+  overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+#mainNav {
+  background: rgba(47, 62, 158, 0.95);
+  backdrop-filter: blur(10px);
+  transition: var(--pipil-transition);
+}
+
+#mainNav.scrolled {
+  background: var(--pipil-azul-principal);
+  box-shadow: var(--pipil-shadow);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--pipil-blanco);
+  font-weight: 500;
+  opacity: 0.9;
+  transition: var(--pipil-transition);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: var(--pipil-amarillo);
+  opacity: 1;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--pipil-amarillo);
+  font-weight: 600;
+}
+
+/* Marca en navbar: Pipil (azul) + tajtol (rosa) */
+#mainNav .brand-title .pipil { color: var(--pipil-blanco); }
+#mainNav .brand-title .tajtol { color: var(--pipil-rosa-principal); }
+
+/* --- Hero (Inicio) --- */
+.hero {
+  background: linear-gradient(135deg, var(--pipil-azul-principal) 0%, #1e2d7a 50%, var(--pipil-azul-claro) 100%);
+  color: var(--pipil-blanco);
+  position: relative;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--pipil-blanco);
+}
+
+.hero .brand-title .pipil { color: var(--pipil-blanco); }
+.hero .brand-title .tajtol { color: var(--pipil-rosa-principal); }
+
+.hero-visual {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(145deg, rgba(241, 92, 154, 0.15), rgba(74, 163, 216, 0.2)), url('../images/Principal.jpeg') center center / cover no-repeat;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--pipil-radius);
+}
+
+/* Botón outline en hero */
+.button-outline-hero {
+  background: transparent;
+  color: var(--pipil-blanco);
+  border: 2px solid var(--pipil-blanco);
+}
+.button-outline-hero:hover {
+  background: var(--pipil-blanco);
+  color: var(--pipil-azul-principal);
+  border-color: var(--pipil-blanco);
+}
+
+/* Animaciones de entrada (hero) */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+.animate-fade-in.delay-1 { animation-delay: 0.2s; }
+.animate-fade-in.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Indicador de scroll */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-link {
+  display: block;
+  width: 28px;
+  height: 44px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  position: relative;
+  transition: var(--pipil-transition);
+}
+
+.scroll-link:hover {
+  border-color: var(--pipil-amarillo);
+}
+
+.scroll-link span {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background: var(--pipil-rosa-principal);
+  border-radius: 50%;
+  animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(10px); opacity: 0.5; }
+}
+
+/* --- Secciones --- */
+.section-py {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--pipil-azul-principal);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+}
+
+.bg-light {
+  background-color: var(--pipil-blanco) !important;
+}
+
+/* Animaciones al hacer scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Nosotros --- */
+.about-image .about-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: url('../images/Principal.jpeg') center center / cover no-repeat;
+}
+
+#nosotros h3 {
+  color: var(--pipil-azul-principal);
+}
+
+/* --- Tarjetas de servicio --- */
+.service-card {
+  background-color: var(--pipil-blanco);
+  border-radius: var(--pipil-radius);
+  box-shadow: var(--pipil-shadow);
+  transition: var(--pipil-transition);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(47, 62, 158, 0.15);
+}
+
+.service-card .card-title {
+  color: var(--pipil-azul-principal);
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: rgba(47, 62, 158, 0.1);
+  color: var(--pipil-azul-principal);
+  border-radius: var(--pipil-radius);
+}
+
+/* --- Portafolio / Carrusel --- */
+.portfolio-slide {
+  width: 100%;
+  height: 400px;
+  background: url('../images/Principal.jpeg') center center / cover no-repeat;
+}
+
+.portfolio-slide-1 {
+  background: linear-gradient(90deg, rgba(47, 62, 158, 0.4), rgba(47, 62, 158, 0.2)), url('../images/Principal.jpeg') center center / cover no-repeat;
+}
+
+.portfolio-slide-2 {
+  background: linear-gradient(90deg, rgba(241, 92, 154, 0.35), rgba(245, 160, 58, 0.25)), url('../images/Principal.jpeg') center center / cover no-repeat;
+}
+
+.portfolio-slide-3 {
+  background: linear-gradient(90deg, rgba(63, 163, 108, 0.4), rgba(205, 230, 184, 0.3)), url('../images/Principal.jpeg') center center / cover no-repeat;
+}
+
+.carousel-caption {
+  background: rgba(47, 62, 158, 0.75);
+  padding: 1rem 1.5rem;
+  border-radius: var(--pipil-radius);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: none;
+  background-color: rgba(47, 62, 158, 0.6);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--pipil-azul-principal);
+}
+
+/* --- Formulario de contacto --- */
+.contact-form .form-control {
+  border-radius: var(--pipil-radius);
+  border: 2px solid #ddd;
+  transition: var(--pipil-transition);
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--pipil-azul-claro);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 163, 216, 0.25);
+}
+
+.contact-form .form-control.is-invalid {
+  border-color: var(--pipil-rosa-principal);
+}
+
+.contact-form .form-control.is-valid {
+  border-color: var(--pipil-verde);
+}
+
+.contact-form .form-label {
+  color: var(--pipil-gris-texto);
+  font-weight: 500;
+}
+
+#formMessage.success {
+  background-color: var(--pipil-verde-claro);
+  color: var(--pipil-verde);
+}
+
+#formMessage.error {
+  background-color: rgba(241, 92, 154, 0.2);
+  color: #842029;
+}
+
+/* --- Footer --- */
+.footer {
+  background: linear-gradient(180deg, var(--pipil-azul-principal) 0%, #1e2d7a 100%);
+  color: var(--pipil-blanco);
+}
+
+.footer .brand-title .pipil { color: var(--pipil-azul-claro); }
+.footer .brand-title .tajtol { color: var(--pipil-rosa-principal); }
+
+.footer .text-white-50 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--pipil-blanco);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transition: var(--pipil-transition);
+}
+
+.social-link:hover {
+  background: var(--pipil-rosa-principal);
+  color: var(--pipil-blanco);
+  transform: translateY(-3px);
+}
+
+.footer hr {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Botones (compatibilidad con clases del design system) --- */
+.btn.button-primary {
+  background-color: var(--pipil-rosa-principal);
+  border-color: var(--pipil-rosa-principal);
+  color: var(--pipil-blanco);
+}
+
+.btn.button-primary:hover {
+  background-color: #e84b8c;
+  border-color: #e84b8c;
+  color: var(--pipil-blanco);
+}
+
+/* --- Responsive --- */
+@media (max-width: 991.98px) {
+  .section-py {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .portfolio-slide {
+    height: 280px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero .btn-lg {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .hero .btn-lg.me-2 {
+    margin-right: 0 !important;
+  }
+}
