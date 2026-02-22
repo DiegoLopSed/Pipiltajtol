@@ -1,0 +1,221 @@
+/* =========================================================
+   pipiltajtol – Design System CSS
+   Paleta extraída del logo oficial
+   ========================================================= */
+
+/* -----------------------------
+   Variables de color
+------------------------------*/
+:root {
+    /* Branding */
+    --pipil-azul-principal: #2F3E9E;
+    --pipil-rosa-principal: #F15C9A;
+  
+    /* Secundarios */
+    --pipil-azul-claro: #4AA3D8;
+    --pipil-verde: #3FA36C;
+    --pipil-verde-claro: #CDE6B8;
+    --pipil-amarillo: #F7C84B;
+    --pipil-naranja: #F5A03A;
+  
+    /* Neutros */
+    --pipil-fondo: #F6EFE6;
+    --pipil-blanco: #FFFFFF;
+    --pipil-gris-texto: #333333;
+  
+    /* UI */
+    --pipil-radius: 12px;
+    --pipil-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    --pipil-transition: all 0.25s ease;
+  }
+  
+  /* -----------------------------
+     Reset básico
+  ------------------------------*/
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-size: 16px;
+  }
+  
+  body {
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    background-color: var(--pipil-fondo);
+    color: var(--pipil-gris-texto);
+    line-height: 1.6;
+  }
+  
+  /* -----------------------------
+     Tipografía
+  ------------------------------*/
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--pipil-azul-principal);
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    margin-bottom: 1em;
+  }
+  
+  .brand-title {
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  
+  .brand-title .pipil {
+    color: var(--pipil-azul-principal);
+  }
+  
+  .brand-title .tajtol {
+    color: var(--pipil-rosa-principal);
+  }
+  
+  /* -----------------------------
+     Layout
+  ------------------------------*/
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1.5rem;
+  }
+  
+  .card {
+    background-color: var(--pipil-blanco);
+    border-radius: var(--pipil-radius);
+    box-shadow: var(--pipil-shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* -----------------------------
+     Botones
+  ------------------------------*/
+  .button {
+    display: inline-block;
+    padding: 0.75rem 1.4rem;
+    border-radius: var(--pipil-radius);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--pipil-transition);
+    text-decoration: none;
+  }
+  
+  .button-primary {
+    background-color: var(--pipil-rosa-principal);
+    color: var(--pipil-blanco);
+  }
+  
+  .button-primary:hover {
+    background-color: #e84b8c;
+  }
+  
+  .button-secondary {
+    background-color: var(--pipil-azul-principal);
+    color: var(--pipil-blanco);
+  }
+  
+  .button-secondary:hover {
+    background-color: #253080;
+  }
+  
+  .button-accent {
+    background-color: var(--pipil-amarillo);
+    color: var(--pipil-azul-principal);
+  }
+  
+  .button-accent:hover {
+    background-color: #eebc3f;
+  }
+  
+  /* -----------------------------
+     Etiquetas / Badges
+  ------------------------------*/
+  .badge {
+    display: inline-block;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .badge-green {
+    background-color: var(--pipil-verde);
+    color: var(--pipil-blanco);
+  }
+  
+  .badge-blue {
+    background-color: var(--pipil-azul-claro);
+    color: var(--pipil-blanco);
+  }
+  
+  .badge-pink {
+    background-color: var(--pipil-rosa-principal);
+    color: var(--pipil-blanco);
+  }
+  
+  /* -----------------------------
+     Formularios
+  ------------------------------*/
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border-radius: var(--pipil-radius);
+    border: 2px solid #ddd;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    transition: var(--pipil-transition);
+  }
+  
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--pipil-azul-claro);
+    outline: none;
+  }
+  
+  /* -----------------------------
+     Estados
+  ------------------------------*/
+  .success {
+    color: var(--pipil-verde);
+  }
+  
+  .warning {
+    color: var(--pipil-naranja);
+  }
+  
+  .error {
+    color: var(--pipil-rosa-principal);
+  }
+  
+  /* -----------------------------
+     Utilidades
+  ------------------------------*/
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-1 { margin-top: 1rem; }
+  .mt-2 { margin-top: 2rem; }
+  .mb-1 { margin-bottom: 1rem; }
+  .mb-2 { margin-bottom: 2rem; }
+  
+  /* -----------------------------
+     Footer
+  ------------------------------*/
+  .footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
