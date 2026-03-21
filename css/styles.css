@@ -42,11 +42,23 @@ body {
   box-shadow: var(--pipil-shadow);
 }
 
+/* Navegación con textos largos */
+#mainNav .navbar-nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 0.35rem;
+}
+
 .navbar-dark .navbar-nav .nav-link {
   color: var(--pipil-blanco);
   font-weight: 500;
   opacity: 0.9;
   transition: var(--pipil-transition);
+  font-size: 0.9rem;
+  padding-inline: 0.5rem;
+  line-height: 1.3;
+  text-align: center;
+  white-space: normal;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
@@ -58,6 +70,12 @@ body {
 .navbar-dark .navbar-nav .nav-link.active {
   color: var(--pipil-amarillo);
   font-weight: 600;
+}
+
+@media (min-width: 992px) {
+  #mainNav .navbar-nav {
+    flex-wrap: nowrap;
+  }
 }
 
 /* Marca en navbar: Pipil (azul) + tajtol (rosa) */
@@ -266,42 +284,6 @@ body {
   background-color: var(--pipil-azul-principal);
 }
 
-/* --- Formulario de contacto --- */
-.contact-form .form-control {
-  border-radius: var(--pipil-radius);
-  border: 2px solid #ddd;
-  transition: var(--pipil-transition);
-}
-
-.contact-form .form-control:focus {
-  border-color: var(--pipil-azul-claro);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(74, 163, 216, 0.25);
-}
-
-.contact-form .form-control.is-invalid {
-  border-color: var(--pipil-rosa-principal);
-}
-
-.contact-form .form-control.is-valid {
-  border-color: var(--pipil-verde);
-}
-
-.contact-form .form-label {
-  color: var(--pipil-gris-texto);
-  font-weight: 500;
-}
-
-#formMessage.success {
-  background-color: var(--pipil-verde-claro);
-  color: var(--pipil-verde);
-}
-
-#formMessage.error {
-  background-color: rgba(241, 92, 154, 0.2);
-  color: #842029;
-}
-
 /* --- Footer --- */
 .footer {
   background: linear-gradient(180deg, var(--pipil-azul-principal) 0%, #1e2d7a 100%);
@@ -348,6 +330,38 @@ body {
   background-color: #e84b8c;
   border-color: #e84b8c;
   color: var(--pipil-blanco);
+}
+
+/* --- Contadores (Lo que estamos logrando) --- */
+#countersSection .counter-card {
+  background-color: var(--pipil-blanco);
+  border-radius: var(--pipil-radius);
+  box-shadow: var(--pipil-shadow);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  height: 100%;
+  transition: transform var(--pipil-transition), box-shadow var(--pipil-transition);
+}
+#countersSection .counter-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(47, 62, 158, 0.15);
+}
+#countersSection .counter-number {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--pipil-azul-principal);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+#countersSection .counter-prefix {
+  color: var(--pipil-rosa-principal);
+  margin-right: 0.05em;
+}
+#countersSection .counter-label {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  color: var(--pipil-gris-texto);
+  font-weight: 500;
 }
 
 /* --- Responsive --- */
