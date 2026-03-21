@@ -1,7 +1,6 @@
 /**
  * Pipiltajtol — Scripts principales
  * - Navegación (scroll, estado)
- * - Validación del formulario de contacto
  * - Animaciones al scroll
  * - Año en el footer
  */
@@ -58,42 +57,37 @@
     observer.observe(el);
   });
 
-  // --- Formulario de contacto: validación y mensajes personalizados
-  const form = document.getElementById('contactForm');
-  const formMessage = document.getElementById('formMessage');
-
-  if (form) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      // Quitar mensaje previo
-      if (formMessage) {
-        formMessage.classList.add('d-none');
-        formMessage.classList.remove('alert-success', 'alert-danger', 'success', 'error');
-      }
-
-      // Validación nativa HTML5 + Bootstrap
-      if (!form.checkValidity()) {
-        event.stopPropagation();
-        form.classList.add('was-validated');
-        if (formMessage) {
-          formMessage.textContent = 'Por favor revisa los campos marcados en rojo.';
-          formMessage.classList.add('alert', 'alert-warning', 'error');
-          formMessage.classList.remove('d-none');
-        }
-        return;
-      }
-
-      // Simular envío (aquí iría tu lógica real: fetch, etc.)
-      if (formMessage) {
-        formMessage.textContent = '¡Mensaje enviado correctamente! Te responderemos pronto.';
-        formMessage.classList.add('alert', 'alert-success', 'success');
-        formMessage.classList.remove('d-none');
-      }
-
-      form.reset();
-      form.classList.remove('was-validated');
-    });
+  // --- Contadores animados (página Lo que estamos logrando)
+  const countersSection = document.getElementById('countersSection');
+  if (countersSection) {
+    let countersPlayed = false;
+    const counterObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting || countersPlayed) return;
+          countersPlayed = true;
+          countersSection.querySelectorAll('.counter-value').forEach(function (el) {
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            if (isNaN(target)) return;
+            const duration = 2200;
+            const start = performance.now();
+            function tick(now) {
+              const t = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - t, 3);
+              el.textContent = String(Math.round(eased * target));
+              if (t < 1) {
+                requestAnimationFrame(tick);
+              } else {
+                el.textContent = String(target);
+              }
+            }
+            requestAnimationFrame(tick);
+          });
+        });
+      },
+      { threshold: 0.2, rootMargin: '0px 0px -40px 0px' }
+    );
+    counterObserver.observe(countersSection);
   }
 
   // --- Año actual en el footer
