@@ -24,6 +24,14 @@
       padding: 1.5rem;
       box-shadow: var(--pipil-shadow);
     }
+    .testimonios-video-slot video {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      display: block;
+      object-fit: cover;
+      background: #000;
+    }
     .testimonios-video-slot .video-icon {
       font-size: 2.5rem;
       line-height: 1;
@@ -33,9 +41,15 @@
     .testimonios-foto {
       aspect-ratio: 4 / 3;
       border-radius: var(--pipil-radius);
-      background: url('../images/Principal.jpeg') center center / cover no-repeat;
       box-shadow: var(--pipil-shadow);
       min-height: 180px;
+      overflow: hidden;
+    }
+    .testimonios-foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .testimonios-integra {
       background: linear-gradient(120deg, rgba(233, 30, 99, 0.08), rgba(47, 62, 158, 0.08));
@@ -101,10 +115,11 @@
           <p class="text-muted small mb-4 animate-on-scroll">Sustituye estos espacios por clips reales (YouTube, Vimeo o archivos locales).</p>
           <div class="row g-4">
             <div class="col-md-6 col-lg-4">
-              <div class="testimonios-video-slot animate-on-scroll">
-                <span class="video-icon" aria-hidden="true">▶</span>
-                <span class="fw-semibold">Video corto 1</span>
-                <span class="small opacity-75 mt-1">Placeholder — añade iframe o &lt;video&gt;</span>
+              <div class="testimonios-video-slot animate-on-scroll p-0 overflow-hidden">
+                <video controls preload="metadata">
+                  <source src="../images/TESTIMONIOS/Testiomio_001.mp4" type="video/mp4">
+                  Tu navegador no soporta la etiqueta video.
+                </video>
               </div>
             </div>
             <div class="col-md-6 col-lg-4">
@@ -154,22 +169,69 @@
           <p class="text-muted small mb-4 animate-on-scroll">Galería de momentos del proceso (reemplaza las imágenes por fotos propias).</p>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
             <div class="col">
-              <div class="testimonios-foto animate-on-scroll" role="img" aria-label="Foto del proceso — placeholder"></div>
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_001.jpeg" alt="Testimonios — foto 1" loading="lazy" decoding="async">
+              </div>
             </div>
             <div class="col">
-              <div class="testimonios-foto animate-on-scroll" role="img" aria-label="Foto del proceso — placeholder"></div>
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_002.jpeg" alt="Testimonios — foto 2" loading="lazy" decoding="async">
+              </div>
             </div>
             <div class="col">
-              <div class="testimonios-foto animate-on-scroll" role="img" aria-label="Foto del proceso — placeholder"></div>
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_003.jpeg" alt="Testimonios — foto 3" loading="lazy" decoding="async">
+              </div>
             </div>
             <div class="col">
-              <div class="testimonios-foto animate-on-scroll" role="img" aria-label="Foto del proceso — placeholder"></div>
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_004.jpeg" alt="Testimonios — foto 4" loading="lazy" decoding="async">
+              </div>
             </div>
             <div class="col">
-              <div class="testimonios-foto animate-on-scroll" role="img" aria-label="Foto del proceso — placeholder"></div>
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_005.jpeg" alt="Testimonios — foto 5" loading="lazy" decoding="async">
+              </div>
             </div>
             <div class="col">
-              <div class="testimonios-foto animate-on-scroll" role="img" aria-label="Foto del proceso — placeholder"></div>
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_006.jpeg" alt="Testimonios — foto 6" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="col">
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_007.jpeg" alt="Testimonios — foto 7" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="col">
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_008.jpeg" alt="Testimonios — foto 8" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="col">
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_009.jpeg" alt="Testimonios — foto 9" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="col">
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_010.jpeg" alt="Testimonios — foto 10" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="col">
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_011.jpeg" alt="Testimonios — foto 11" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="col">
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_012.jpeg" alt="Testimonios — foto 12" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="col">
+              <div class="testimonios-foto animate-on-scroll">
+                <img src="../images/TESTIMONIOS/Img_testimoio_013.jpeg" alt="Testimonios — foto 13" loading="lazy" decoding="async">
+              </div>
             </div>
           </div>
         </section>
